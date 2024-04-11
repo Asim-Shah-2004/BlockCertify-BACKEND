@@ -1,7 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.13;
 
-contract MyContract {
+contract Certify {
     string public rootHash;
     address public creator;
     
