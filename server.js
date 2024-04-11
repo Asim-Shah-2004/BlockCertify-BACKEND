@@ -4,11 +4,15 @@ const app = express();
 const bodyParser = require('body-parser');
 const PORT = 3000;
 const connectMongoDb = require('./services/connectMongoDB.js')
+const cors = require('cors')
+const corsOptions = require('./config/corsOptions.js')
 
-connectMongoDb()
-
+app.use(cors(corsOptions))
 app.use(express.json());
 app.use(bodyParser.json());
+
+
+connectMongoDb()
 
 app.listen(PORT,()=>{
     console.log(`server running on port ${PORT}`);
